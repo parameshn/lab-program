@@ -14,6 +14,7 @@ int main()
     int a[m][n];
     printf("Enter elements of matrix\n");
     read(m, n, a);
+    print(m, n, a);
     if (m != n)
     {
         printf("Trace can't be found\n");
@@ -42,7 +43,7 @@ void print(int p, int q, int a[p][q])
     {
         for (int j = 0; j < q; j++)
         {
-            printf("%d", a[i][j]);
+            printf("%d\t", a[i][j]);
         }
         printf("\n");
     }
