@@ -38,7 +38,7 @@ void print(int p, int q, int a[p][q])
 {
     for (int i = 0; i < p; i++)
     {
-        for (int j = 0; j < p; j++)
+        for (int j = 0; j < q; j++)
         {
             printf("%d", a[i][j]);
         }
