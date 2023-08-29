@@ -1,3 +1,5 @@
+// Trace and Norm
+
 #include <stdio.h>
 #include <math.h>
 void read(int p, int q, int a[p][q]);
@@ -52,7 +54,10 @@ void trace(int p, int q, int a[p][q])
     {
         for (int j = 0; j < q; j++)
         {
-            sum += a[i][j];
+            if (i == j)
+            {
+                sum += a[i][j];
+            }
         }
     }
     printf("Trace is %d\n", sum);
