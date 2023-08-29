@@ -6,7 +6,7 @@ void trace(int p, int q, int a[p][q]);
 void norm(int p, int q, int a[p][q]);
 int main()
 {
-    int m, n, r, s;
+    int m, n;
     printf("Enter the order of the matrix\n");
     scanf("%d %d", &m, &n);
     int a[m][n];
