@@ -52,7 +52,7 @@ void trace(int p, int q, int a[p][q])
     {
         for (int j = 0; j < q; j++)
         {
-            sum = sum + a[i][j];
+            sum += a[i][j];
         }
     }
     printf("Trace is %d\n", sum);
@@ -64,7 +64,7 @@ void norm(int p, int q, int a[p][q])
     {
         for (int j = 0; j < q; j++)
         {
-            s = s + pow(a[i][j], 2);
+            s += a[i][j] * a[i][j];
         }
     }
     s = sqrt(s);
