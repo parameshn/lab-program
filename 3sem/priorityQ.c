@@ -52,7 +52,7 @@ void deletemin(Que *pq)
     pq->rear--;
 }
 void qFront(Que *pq) {
-    if (pq->count == 0) {
+    if (pq->rear == -1) {
         printf("\nqueue is empty\n");
         return;
     }
@@ -61,7 +61,7 @@ void qFront(Que *pq) {
 }
 
 void qRear(Que *pq) {
-    if (pq->count == 0) {
+    if (pq->rear == -1) {
         printf("\nqueue is empty\n");
         return;
     }
