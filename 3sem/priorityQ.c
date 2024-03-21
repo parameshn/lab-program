@@ -11,15 +11,15 @@ typedef struct {
 void insert(Que *pq)
 {
     int value ;
-    if(pq->rear == pq->size -1)
+    if(pq->count == pq->size)
     {
         printf("\nQueue is full!!");
         return;
     }
     printf("\nenter the element to be inserted\n");
     scanf("%d", &value);
-    pq->rear = (pq->rear + 1) % pq->size;
-    pq->items[pq->rear] = value;
+  //  pq->rear = (pq->rear + 1) % pq->size;
+    pq->items[++pq->rear] = value;
     pq->count++;
 }
 
@@ -34,7 +34,7 @@ void deletemin(Que *pq)
 
     min = pq->items[pq->front];
     minindex = pq->front;
-    for (i = pq->front ; i< pq->rear;i++)
+    for (i = pq->front ; i<= pq->rear;i++)
     {
         if(pq->items[i] < min)
         {
@@ -50,6 +50,7 @@ void deletemin(Que *pq)
 
     printf("\ndeleted elements is %d\n",min);
     pq->rear--;
+    pq->count--;
 }
 void qFront(Que *pq) {
     if (pq->rear == -1) {
@@ -69,32 +70,33 @@ void qRear(Que *pq) {
     printf("\nrear of the element of the queue is %d\n", pq->items[pq->rear]);
 }
 
-// void display(Que *pq) {
-//     if (pq->front> pq->rear) {
-//         printf("\nqueue is empty\n");
-//         return;
-//     }
-
-//     printf("\nthe elements are\n");
-//     for (int i = pq->front; i < pq->rear; i++) {
-//         printf("%d\t", pq->items[i]);
-//     }
-    
-// }
 void display(Que *pq) {
-    if (pq->rear == -1) {
-        printf("\nQueue is empty\n");
+    if (pq->front> pq->rear) {
+        printf("\nqueue is empty\n");
         return;
     }
 
-    printf("\nThe elements are:\n");
-    int i = pq->front;
-    do {
+    printf("\nthe elements are\n");
+    for (int i = pq->front; i <= pq->rear; i++) {
         printf("%d\t", pq->items[i]);
-        i = (i + 1) % pq->size;
-    } while (i != (pq->rear + 1) % pq->size);
-    printf("\n");
+    }
 }
+    
+// }
+// void display(Que *pq) {
+//     if (pq->rear == -1) {
+//         printf("\nQueue is empty\n");
+//         return;
+//     }
+
+//     printf("\nThe elements are:\n");
+//     int i = pq->front;
+//     do {
+//         printf("%d\t", pq->items[i]);
+//         i = (i + 1) % pq->size;
+//     } while (i != (pq->rear + 1) % pq->size);
+//     printf("\n");
+// }
 
 
 void main() {
