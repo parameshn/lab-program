@@ -79,21 +79,24 @@ void insertFront(Que *pq)
         pq->items[++pq->rear] = item;
         return;
     }
-    if(pq->front != 0 && pq->rear >pq->front){
+
+    // if(pq->front == -1)
+    // {
+    //     printf("enter the item to be inserted\n");
+    //     scanf("%d",&item);
+    //     pq->items[++pq->rear] = item;
+    //     pq->front++;
+    //     return;
+    // }
+
+    if(pq->front != 0 ){
         printf("\nEnter the item to inserted \n");
         scanf("%d",&item);
         pq->items[--pq->front] = item;
         return;
     }
 
-    if(pq->front != 0)
-    {
-        printf("enter the item to be inserted\n");
-        scanf("%d",&item);
-        pq->items[++pq->rear] = item;
-        pq->front++;
-        return;
-    }
+    
 
     if(pq->rear == pq->size -1 && pq->front == 0)
     {
